@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 200 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 280 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 200 95% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(200 95% 50%), hsl(190 90% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 70% 60%), hsl(260 75% 65%));
+    --gradient-bg: linear-gradient(180deg, hsl(210 100% 97%), hsl(200 100% 98%));
+    --shadow-soft: 0 4px 24px -2px hsl(200 95% 50% / 0.12);
+    --shadow-glow: 0 0 40px hsl(200 95% 50% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 215 30% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 95% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 280 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 200 95% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(200 95% 55%), hsl(190 90% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 70% 60%), hsl(260 75% 65%));
+    --gradient-bg: linear-gradient(180deg, hsl(215 30% 10%), hsl(215 28% 12%));
+    --shadow-soft: 0 4px 24px -2px hsl(200 95% 55% / 0.15);
+    --shadow-glow: 0 0 40px hsl(200 95% 55% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    background: var(--gradient-bg);
+  }
+}
